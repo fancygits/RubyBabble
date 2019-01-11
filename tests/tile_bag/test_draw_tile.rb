@@ -1,7 +1,12 @@
 require 'minitest/autorun'
 require_relative '../../tile_bag.rb'
 
+# This class tests the draw_tile function of TileBag.
+# Author:: James Luke Johnson (mailto:jjohn144@my.westga.edu)
+# Version:: 2019.1.10
 class TestDrawTile < MiniTest::Test
+
+  # Tests that the TileBag has exactly 98 tiles at initialization.
   def test_has_proper_number_of_tiles
     bag = TileBag.new
     97.times do
@@ -13,6 +18,7 @@ class TestDrawTile < MiniTest::Test
     assert_nil bag.draw_tile
   end
   
+  # Tests that the TileBag has the correct _Scrabble_ distribution of letters.
   def test_has_proper_tile_distribution
     bag = TileBag.new
     sd = [
