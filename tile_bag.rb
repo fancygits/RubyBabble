@@ -11,25 +11,15 @@ class TileBag
   end
   
   def draw_tile
-      @tiles.shuffle!.shift
+    @tiles.shuffle!.shift
   end
   
   def empty?
-      return @tiles.empty?
+    return @tiles.empty?
   end
   
   def self.points_for tile
     return VALUES[tile]
-  end
-  
-  
-  
-  def count
-    return @tiles.length
-  end
-  
-  def show_tiles
-    return @tiles.sort
   end
   
   private
@@ -45,4 +35,3 @@ class TileBag
     12.times { @tiles.push(:E) }
   end
 end
-
