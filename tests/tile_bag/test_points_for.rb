@@ -4,7 +4,7 @@ require_relative '../../tile_bag.rb'
 # This class tests the points_for function of TileBag.
 # Author:: James Luke Johnson (mailto:jjohn144@my.westga.edu)
 # Version:: 2019.1.10
-class TestPointsFor < MiniTest::Test
+class TileBag::TestPointsFor < MiniTest::Test
 
   # Tests every *Tile* in the bag for the _Scrabble_-default value.
   def test_confirm_point_values

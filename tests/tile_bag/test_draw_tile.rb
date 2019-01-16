@@ -4,7 +4,7 @@ require_relative '../../tile_bag.rb'
 # This class tests the draw_tile function of TileBag.
 # Author:: James Luke Johnson (mailto:jjohn144@my.westga.edu)
 # Version:: 2019.1.10
-class TestDrawTile < MiniTest::Test
+class TileBag::TestDrawTile < MiniTest::Test
 
   # Tests that the TileBag has exactly 98 tiles at initialization.
   def test_has_proper_number_of_tiles
