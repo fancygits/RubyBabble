@@ -4,7 +4,7 @@ require_relative '../../tile_group.rb'
 # This class tests the remove method of TileGroup.
 # Author:: James Luke Johnson (mailto:jjohn144@my.westga.edu)
 # Version:: 2019.1.15
-class TestRemove < MiniTest::Test
+class TileGroup::TestRemove < MiniTest::Test
 
   def setup # :nodoc:
     @group = TileGroup.new

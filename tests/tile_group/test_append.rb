@@ -4,7 +4,7 @@ require_relative '../../tile_group.rb'
 # This class tests the append method of TileGroup.
 # Author:: James Luke Johnson (mailto:jjohn144@my.westga.edu)
 # Version:: 2019.1.15
-class TestAppend < MiniTest::Test
+class TileGroup::TestAppend < MiniTest::Test
 
   def setup
     @group = TileGroup.new
