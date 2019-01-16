@@ -11,7 +11,10 @@ class TileGroup
     @tiles.push(tile)
   end
   
-  
+  def remove(tile)
+    raise "Tile not found." if (@tiles.index(tile) == nil)
+    @tiles.delete_at(@tiles.index(tile))
+  end
   
   private
   
