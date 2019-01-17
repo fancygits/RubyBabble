@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<title>class TileBag - RDoc Documentation</title>
+<title>class TileGroup - RDoc Documentation</title>
 
 <script type="text/javascript">
   var rdoc_rel_prefix = "./";
@@ -73,11 +73,11 @@
     
     <li ><a href="#method-c-new">::new</a>
     
-    <li ><a href="#method-c-points_for">::points_for</a>
+    <li ><a href="#method-i-append">#append</a>
     
-    <li ><a href="#method-i-draw_tile">#draw_tile</a>
+    <li ><a href="#method-i-hand">#hand</a>
     
-    <li ><a href="#method-i-empty-3F">#empty?</a>
+    <li ><a href="#method-i-remove">#remove</a>
     
   </ul>
 </div>
@@ -85,21 +85,22 @@
   </div>
 </nav>
 
-<main role="main" aria-labelledby="class-TileBag">
-  <h1 id="class-TileBag" class="class">
-    class TileBag
+<main role="main" aria-labelledby="class-TileGroup">
+  <h1 id="class-TileGroup" class="class">
+    class TileGroup
   </h1>
 
   <section class="description">
     
-<p>This class represents a bag of <em>Scrabble</em> tiles to draw from.</p>
+<p>This class represents a group of <em>Scrabble</em> tiles drawn from a <a
+href="TileBag.html">TileBag</a>.</p>
 <dl class="rdoc-list note-list"><dt>Author
 <dd>
 <p>James Luke Johnson (<a
 href="mailto:jjohn144@my.westga.edu">jjohn144@my.westga.edu</a>)</p>
 </dd><dt>Version
 <dd>
-<p>2019.1.10</p>
+<p>2019.1.15</p>
 </dd></dl>
 
   </section>
@@ -111,21 +112,28 @@ href="mailto:jjohn144@my.westga.edu">jjohn144@my.westga.edu</a>)</p>
     
 
     
-    <section class="constants-list">
-      <header>
-        <h3>Constants</h3>
-      </header>
-      <dl>
-      
-        <dt id="VALUES">VALUES
-        
-        <dd><p>The values of each <strong>Tile</strong></p>
-        
-      
-      </dl>
-    </section>
-    
 
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-tiles" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">tiles</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>An array of Tiles in the <a href="TileGroup.html">TileGroup</a></p>
+        
+        </div>
+      </div>
+      
+    </section>
     
 
     
@@ -148,62 +156,15 @@ href="mailto:jjohn144@my.westga.edu">jjohn144@my.westga.edu</a>)</p>
 
         <div class="method-description">
           
-          <p>Creates a new <a href="TileBag.html">TileBag</a> and fills it with the
-standard distribution of <em>Scrabble</em> tiles.</p>
+          <p>Creates an empty <a href="TileGroup.html">TileGroup</a></p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File tile_bag.rb, line 14</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>
+            <pre><span class="ruby-comment"># File tile_group.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> 
   <span class="ruby-ivar">@tiles</span> = []
-  <span class="ruby-identifier">fill_bag</span>
-<span class="ruby-keyword">end</span></pre>
-          </div>
-          
-        </div>
-
-        
-
-        
-      </div>
-
-    
-      <div id="method-c-points_for" class="method-detail ">
-        
-        <div class="method-heading">
-          <span class="method-name">points_for</span><span
-            class="method-args">(tile)</span>
-          
-          <span class="method-click-advice">click to toggle source</span>
-          
-        </div>
-        
-
-        <div class="method-description">
-          
-          <p>Checks the value of a <strong>Tile</strong>.</p>
-<dl class="rdoc-list label-list"><dt><code>Parameters:</code>
-<dt>tile
-<dd>
-<p>A symbol representing the tile to get points for.</p>
-</dd><dt><code>Returns:</code>
-<dt>int
-<dd>
-<p>The value of the tile <em>or</em></p>
-</dd><dt>nil
-<dd>
-<p>if <a href="TileBag.html">TileBag</a> is empty.</p>
-</dd></dl>
-          
-          
-
-          
-          <div class="method-source-code" id="points_for-source">
-            <pre><span class="ruby-comment"># File tile_bag.rb, line 40</span>
-<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">points_for</span> <span class="ruby-identifier">tile</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-constant">VALUES</span>[<span class="ruby-identifier">tile</span>]
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -223,11 +184,11 @@ standard distribution of <em>Scrabble</em> tiles.</p>
        </header>
 
     
-      <div id="method-i-draw_tile" class="method-detail ">
+      <div id="method-i-append" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">draw_tile</span><span
-            class="method-args">()</span>
+          <span class="method-name">append</span><span
+            class="method-args">(tile)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -236,23 +197,17 @@ standard distribution of <em>Scrabble</em> tiles.</p>
 
         <div class="method-description">
           
-          <p>Draws a random tile from the <a href="TileBag.html">TileBag</a>.</p>
-<dl class="rdoc-list label-list"><dt>Returns:
-<dt>Tile
-<dd>
-<p><em>or</em></p>
-</dd><dt>nil
-<dd>
-<p>if <a href="TileBag.html">TileBag</a> is empty.</p>
-</dd></dl>
+          <p>Appends a new <strong>Tile</strong> to the <a
+href="TileGroup.html">TileGroup</a></p>
           
           
 
           
-          <div class="method-source-code" id="draw_tile-source">
-            <pre><span class="ruby-comment"># File tile_bag.rb, line 23</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draw_tile</span>
-  <span class="ruby-ivar">@tiles</span>.<span class="ruby-identifier">shuffle!</span>.<span class="ruby-identifier">shift</span>
+          <div class="method-source-code" id="append-source">
+            <pre><span class="ruby-comment"># File tile_group.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">append</span>(<span class="ruby-identifier">tile</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Tile has invalid format.&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">is_tile_valid?</span>(<span class="ruby-identifier">tile</span>)
+  <span class="ruby-ivar">@tiles</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">tile</span>)
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -264,10 +219,10 @@ standard distribution of <em>Scrabble</em> tiles.</p>
       </div>
 
     
-      <div id="method-i-empty-3F" class="method-detail ">
+      <div id="method-i-hand" class="method-detail ">
         
         <div class="method-heading">
-          <span class="method-name">empty?</span><span
+          <span class="method-name">hand</span><span
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -277,20 +232,52 @@ standard distribution of <em>Scrabble</em> tiles.</p>
 
         <div class="method-description">
           
-          <p>Checks if the <a href="TileBag.html">TileBag</a> is empty.</p>
-<dl class="rdoc-list label-list"><dt><code>Returns:</code>
-<dt>true
-<dd>
-<p>if bag is empty.</p>
-</dd></dl>
+          <p>Returns a string that is the concatenation of all Tiles&#39; string values</p>
           
           
 
           
-          <div class="method-source-code" id="empty-3F-source">
-            <pre><span class="ruby-comment"># File tile_bag.rb, line 30</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">empty?</span>
-  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@tiles</span>.<span class="ruby-identifier">empty?</span>
+          <div class="method-source-code" id="hand-source">
+            <pre><span class="ruby-comment"># File tile_group.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hand</span>
+  <span class="ruby-identifier">hand</span> = <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-ivar">@tiles</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">tile</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hand</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">tile</span>.<span class="ruby-identifier">to_s</span> }
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">hand</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove</span><span
+            class="method-args">(tile)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Removes a <strong>Tile</strong> from the <a
+href="TileGroup.html">TileGroup</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="remove-source">
+            <pre><span class="ruby-comment"># File tile_group.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove</span>(<span class="ruby-identifier">tile</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Tile not found.&quot;</span> <span class="ruby-keyword">if</span> (<span class="ruby-ivar">@tiles</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">tile</span>) <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@tiles</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-ivar">@tiles</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">tile</span>))
 <span class="ruby-keyword">end</span></pre>
           </div>
           

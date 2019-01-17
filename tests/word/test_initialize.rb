@@ -8,6 +8,7 @@ class Word::TestInitialize < MiniTest::Test
 
   # Tests that an empty word is created.
   def test_create_empty_word
-    
+    word = Word.new
+    assert word.tiles.empty?
   end
 end

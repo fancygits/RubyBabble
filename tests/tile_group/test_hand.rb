@@ -6,7 +6,8 @@ require_relative '../../tile_group.rb'
 # Version:: 2019.1.15
 class TileGroup::TestHand < MiniTest::Test
 
-  def setup # :nodoc:
+  # Creates a new, empty TileGroup for testing.
+  def setup
     @group = TileGroup.new
   end
   

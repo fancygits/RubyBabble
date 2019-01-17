@@ -1,8 +1,16 @@
-Thu, 10 Jan 2019 22:26:46 -0600
+Wed, 16 Jan 2019 18:46:26 -0600
 ./Gemfile	Tue, 08 Jan 2019 23:15:03 -0600
 ./Gemfile.lock	Tue, 08 Jan 2019 23:22:32 -0600
 ./Rakefile	Thu, 10 Jan 2019 22:11:22 -0600
-./README.md	Thu, 10 Jan 2019 22:26:12 -0600
-./tests/tile_bag/test_draw_tile.rb	Thu, 10 Jan 2019 22:21:29 -0600
-./tests/tile_bag/test_points_for.rb	Thu, 10 Jan 2019 22:22:28 -0600
-./tile_bag.rb	Thu, 10 Jan 2019 22:18:33 -0600
+./README.md	Sun, 13 Jan 2019 23:14:28 -0600
+./tests/tile_bag/test_draw_tile.rb	Tue, 15 Jan 2019 21:46:12 -0600
+./tests/tile_bag/test_points_for.rb	Tue, 15 Jan 2019 21:46:34 -0600
+./tests/tile_group/test_append.rb	Wed, 16 Jan 2019 18:46:16 -0600
+./tests/tile_group/test_hand.rb	Wed, 16 Jan 2019 18:45:53 -0600
+./tests/tile_group/test_initialize.rb	Tue, 15 Jan 2019 21:54:36 -0600
+./tests/tile_group/test_remove.rb	Wed, 16 Jan 2019 18:45:25 -0600
+./tests/word/test_initialize.rb	Wed, 16 Jan 2019 08:07:39 -0600
+./tests/word/test_score.rb	Wed, 16 Jan 2019 18:40:14 -0600
+./tile_bag.rb	Wed, 16 Jan 2019 18:42:56 -0600
+./tile_group.rb	Wed, 16 Jan 2019 18:41:21 -0600
+./word.rb	Wed, 16 Jan 2019 18:20:51 -0600

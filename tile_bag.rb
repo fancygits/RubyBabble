@@ -43,6 +43,7 @@ class TileBag
   
   private
   
+  # Helper method to fill the TileBag with the standard _Scrabble_ tiles.
   def fill_bag
     @tiles.push(:K, :J, :X, :Q, :Z)
     2.times { @tiles.push(:B, :C, :M, :P, :F, :H, :V, :W, :Y) }

@@ -6,7 +6,8 @@ require_relative '../../tile_group.rb'
 # Version:: 2019.1.15
 class TileGroup::TestRemove < MiniTest::Test
 
-  def setup # :nodoc:
+  # Creates a new TileGroup and adds several tiles to it.
+  def setup
     @group = TileGroup.new
     @group.append(:A)
     @group.append(:B)

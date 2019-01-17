@@ -6,6 +6,7 @@ require_relative '../../tile_group.rb'
 # Version:: 2019.1.15
 class TileGroup::TestAppend < MiniTest::Test
 
+  # Creates a new, empty TileGroup for testing.
   def setup
     @group = TileGroup.new
   end

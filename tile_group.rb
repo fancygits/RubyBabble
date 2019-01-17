@@ -3,6 +3,7 @@
 # Version:: 2019.1.15
 class TileGroup
   
+  # An array of Tiles in the TileGroup
   attr_reader :tiles
   
   # Creates an empty TileGroup
