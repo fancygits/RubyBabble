@@ -1,4 +1,5 @@
 require_relative 'tile_group.rb'
+require_relative 'word.rb'
 
 # This class represents the current set of 7 tiles from which the player can make a word.
 # Author:: James Luke Johnson (mailto:jjohn144@my.westga.edu)
@@ -13,6 +14,7 @@ class TileRack < TileGroup
     return MAX_TILES - @tiles.length
   end
   
+  # Returns true if the rack has enough tiles to make the word represented by the text parameter.
   def has_tiles_for?(text)
     raise "That is not a valid String." unless text.is_a?(String)
     copy = duplicate_tiles
@@ -24,8 +26,20 @@ class TileRack < TileGroup
     return true
   end
   
+  # Returns a Word object made by removing the tiles given by text (a string).
+  def remove_word(text)
+    raise "Not enough tiles to make that Word." unless has_tiles_for?(text)
+    word = Word.new
+    text.upcase.each_char do |c|
+      word.append(c.to_sym)
+      remove(c.to_sym)
+    end
+    return word
+  end
+  
   private
   
+  # Returns a duplicate of the tiles array
   def duplicate_tiles
     copy = []
     @tiles.each { |tile| copy.push(tile) }

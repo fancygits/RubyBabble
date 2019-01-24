@@ -1,4 +1,5 @@
 require_relative 'tile_group.rb'
+require_relative 'tile_bag.rb'
 
 # This class represents a scorable set of tiles drawn in a TileGroup.
 # Author:: James Luke Johnson (mailto:jjohn144@my.westga.edu)
