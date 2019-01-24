@@ -25,7 +25,7 @@ class TileGroup::TestRemove < MiniTest::Test
     single = TileGroup.new
     single.append(:O)
     single.remove(:O)
-    assert true, single.tiles.empty?
+    assert_equal true, single.tiles.empty?
   end
   
   # Tests that a TileGroup can remove the first of many tiles.
