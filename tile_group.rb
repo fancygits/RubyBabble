@@ -4,7 +4,7 @@
 class TileGroup
   
   # An array of Tiles in the TileGroup
-  attr_reader :tiles
+  attr_accessor :tiles
   
   # Creates an empty TileGroup
   def initialize 
