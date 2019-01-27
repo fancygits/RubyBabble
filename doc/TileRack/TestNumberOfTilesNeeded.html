@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TileRack::TestNumberOfTilesNeeded - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">MiniTest::Test
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-setup">#setup</a>
+    
+    <li ><a href="#method-i-test_empty_tile_rack_should_need_max_tiles">#test_empty_tile_rack_should_need_max_tiles</a>
+    
+    <li ><a href="#method-i-test_that_full_tile_rack_doesnt_need_any_tiles">#test_that_full_tile_rack_doesnt_need_any_tiles</a>
+    
+    <li ><a href="#method-i-test_tile_rack_with_one_tile_should_need_max_minus_one_tiles">#test_tile_rack_with_one_tile_should_need_max_minus_one_tiles</a>
+    
+    <li ><a href="#method-i-test_tile_rack_with_several_tiles_should_need_some_tiles">#test_tile_rack_with_several_tiles_should_need_some_tiles</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TileRack::TestNumberOfTilesNeeded">
+  <h1 id="class-TileRack::TestNumberOfTilesNeeded" class="class">
+    class TileRack::TestNumberOfTilesNeeded
+  </h1>
+
+  <section class="description">
+    
+<p>This class contains unit tests for the <a href="../TileRack.html#method-i-number_of_tiles_needed"><code>TileRack#number_of_tiles_needed</code></a> method.</p>
+<dl class="rdoc-list note-list"><dt>Author
+<dd>
+<p>James Luke Johnson (<a href="mailto:jjohn144@my.westga.edu">jjohn144@my.westga.edu</a>)</p>
+</dd><dt>Version
+<dd>
+<p>2019.1.22</p>
+</dd></dl>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-setup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">setup</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets up the tests by creating a new <a href="../TileRack.html"><code>TileRack</code></a>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="setup-source">
+            <pre><span class="ruby-comment"># File tests/tile_rack/test_number_of_tiles_needed.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">setup</span>
+  <span class="ruby-ivar">@rack</span> = <span class="ruby-constant">TileRack</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_empty_tile_rack_should_need_max_tiles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_empty_tile_rack_should_need_max_tiles</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests that an empty <a href="../TileRack.html"><code>TileRack</code></a> needs 7 tiles</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_empty_tile_rack_should_need_max_tiles-source">
+            <pre><span class="ruby-comment"># File tests/tile_rack/test_number_of_tiles_needed.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_empty_tile_rack_should_need_max_tiles</span>
+  <span class="ruby-identifier">assert_equal</span> [], <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">tiles</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">7</span>, <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">number_of_tiles_needed</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_that_full_tile_rack_doesnt_need_any_tiles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_that_full_tile_rack_doesnt_need_any_tiles</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests that a full <a href="../TileRack.html"><code>TileRack</code></a> (with 7 tiles) needs 0 tiles</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_that_full_tile_rack_doesnt_need_any_tiles-source">
+            <pre><span class="ruby-comment"># File tests/tile_rack/test_number_of_tiles_needed.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_that_full_tile_rack_doesnt_need_any_tiles</span>
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:I</span>)
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:T</span>)
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:S</span>)
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:F</span>)
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:U</span>)
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:L</span>)
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:L</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">7</span>, <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">tiles</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">0</span>, <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">number_of_tiles_needed</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_tile_rack_with_one_tile_should_need_max_minus_one_tiles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_tile_rack_with_one_tile_should_need_max_minus_one_tiles</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests that a <a href="../TileRack.html"><code>TileRack</code></a> with one tile needs 6 tiles</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_tile_rack_with_one_tile_should_need_max_minus_one_tiles-source">
+            <pre><span class="ruby-comment"># File tests/tile_rack/test_number_of_tiles_needed.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_tile_rack_with_one_tile_should_need_max_minus_one_tiles</span>
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:A</span>)
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-value">:A</span>], <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">tiles</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">6</span>, <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">number_of_tiles_needed</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-test_tile_rack_with_several_tiles_should_need_some_tiles" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">test_tile_rack_with_several_tiles_should_need_some_tiles</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Tests that a <a href="../TileRack.html"><code>TileRack</code></a> with 4 tiles needs 3 tiles</p>
+          
+          
+
+          
+          <div class="method-source-code" id="test_tile_rack_with_several_tiles_should_need_some_tiles-source">
+            <pre><span class="ruby-comment"># File tests/tile_rack/test_number_of_tiles_needed.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">test_tile_rack_with_several_tiles_should_need_some_tiles</span>
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:T</span>)
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:E</span>)
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:S</span>)
+  <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">append</span>(<span class="ruby-value">:T</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">4</span>, <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">tiles</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">3</span>, <span class="ruby-ivar">@rack</span>.<span class="ruby-identifier">number_of_tiles_needed</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
