@@ -20,18 +20,26 @@ class Babble
   
   # The main loop of the game
   def run
-    fill_rack
-    puts "Tile Rack: " + @rack.hand
-    print "Your Word: "
-    attempt = gets.chomp
-    #if Spellchecker::check(attempt)[0][:correct]
-      word = @rack.remove_word(attempt)
-      @score += word.score
-      @wordbank.push(word)
-      puts "You made " + attempt + " for " + word.score.to_s + " points"
-   # else
-   #   puts "Not a valid word"
-   # end
+  	attempt = ""
+  	until @bag.empty? || attempt == ":quit"
+		  fill_rack
+		  puts "Tile Rack: " + @rack.hand
+		  print "Your Word: "
+		  attempt = gets.chomp
+		  if attempt == ":quit"
+		  	game_over
+		  	break
+		 	end
+		  if Spellchecker::check(attempt)[0][:correct]
+		    word = @rack.remove_word(attempt)
+		    @score += word.score
+		    @wordbank.push(word)
+		    puts "You made " + attempt + " for " + word.score.to_s + " points."
+		  else
+		    puts "Not a valid word"
+		  end
+		  puts "You have a total of " + @score.to_s + " points."
+		end
   end
   
   private
@@ -50,14 +58,13 @@ class Babble
       unless @bag.empty?
         tile = @bag.draw_tile
         @rack.append(tile)
-      else
-        game_over
       end
     end
   end
   
   def game_over
-    puts "Game Over"
+    puts "Thanks for playing, total score: " + @score.to_s
+  	return true
   end
   
 end
