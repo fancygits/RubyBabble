@@ -14,20 +14,22 @@ class Babble
     @bag = TileBag.new
     @rack = TileRack.new
     @score = 0
-    @wordbank = []
-    intro
+    puts "-" * 40
+    puts "Welcome to the Babble game!"
+    puts "Create words from your tile rack until you run out of tiles."
+    puts "At any time, you can type :quit to quit the game."
+    puts "-" * 40
   end
   
   # The main loop of the game
   def run
   	attempt = ""
-  	until @bag.empty? || attempt == ":quit"
+  	until (@bag.empty? && @rack.tiles.empty?) || attempt == ":quit"
 		  fill_rack
 		  puts "Tile Rack: " + @rack.hand
 		  print "Your Word: "
-		  attempt = gets.chomp
+		  attempt = gets.strip
 		  if attempt == ":quit"
-		  	game_over
 		  	break
 		 	end
 		  if spelled_correctly?(attempt)
@@ -35,20 +37,12 @@ class Babble
 		  else
 		    print "Not a valid word.\t\t"
 		  end
-		  puts "You have a total of " + @score.to_s + " points."
+		  puts "Total score: " + @score.to_s + " points."
 		end
+		puts "Thanks for playing, total score: " + @score.to_s
   end
   
   private
-  
-  # Displays the introduction message
-  def intro
-    puts "-" * 40
-    puts "Welcome to the Babble game!"
-    puts "Create words from your tile rack until you run out of tiles."
-    puts "At any time, you can type :quit to quit the game."
-    puts "-" * 40
-  end
   
   # Fills the rack with tiles
   def fill_rack
@@ -66,23 +60,15 @@ class Babble
   end
   
   # Makes a word and adds it to the wordbank
-  def make_word(word)
+  def make_word(new_word)
   	begin
-			new_word = @rack.remove_word(word)
-			@score += new_word.score
-			@wordbank.push(new_word)
-			print "You made " + word.upcase + " for " + new_word.score.to_s + " points.\t"
+			word = @rack.remove_word(new_word)
+			@score += word.score
+			print "You made " + word.hand.upcase + " for " + word.score.to_s + " points.\t"
 		rescue
 			print "Not enough tiles.\t\t"
 		end
   end
-  
-  # Ends the game
-  def game_over
-    puts "Thanks for playing, total score: " + @score.to_s
-  	return true
-  end
-  
 end
 
 Babble.new.run
