@@ -30,13 +30,10 @@ class Babble
 		  	game_over
 		  	break
 		 	end
-		  if Spellchecker::check(attempt)[0][:correct]
-		    word = @rack.remove_word(attempt)
-		    @score += word.score
-		    @wordbank.push(word)
-		    puts "You made " + attempt + " for " + word.score.to_s + " points."
+		  if spelled_correctly?(attempt)
+		  	make_word(attempt)
 		  else
-		    puts "Not a valid word"
+		    print "Not a valid word.\t\t"
 		  end
 		  puts "You have a total of " + @score.to_s + " points."
 		end
@@ -53,6 +50,7 @@ class Babble
     puts "-" * 40
   end
   
+  # Fills the rack with tiles
   def fill_rack
     @rack.number_of_tiles_needed.times do
       unless @bag.empty?
@@ -62,6 +60,24 @@ class Babble
     end
   end
   
+  # Returns true if the word is spelled correctly
+  def spelled_correctly?(word)
+  	return Spellchecker::check(word)[0][:correct]
+  end
+  
+  # Makes a word and adds it to the wordbank
+  def make_word(word)
+  	begin
+			new_word = @rack.remove_word(word)
+			@score += new_word.score
+			@wordbank.push(new_word)
+			print "You made " + word.upcase + " for " + new_word.score.to_s + " points.\t"
+		rescue
+			print "Not enough tiles.\t\t"
+		end
+  end
+  
+  # Ends the game
   def game_over
     puts "Thanks for playing, total score: " + @score.to_s
   	return true
